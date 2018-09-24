@@ -1,0 +1,429 @@
+Simulator report for LabDigitalProject
+Tue May 17 16:36:41 2016
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 225 nodes    ;
+; Simulation Coverage         ;      79.56 % ;
+; Total Number of Transitions ; 1017         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      79.56 % ;
+; Total nodes checked                                 ; 225          ;
+; Total output ports checked                          ; 225          ;
+; Total output ports with complete 1/0-value coverage ; 179          ;
+; Total output ports with no 1/0-value coverage       ; 44           ;
+; Total output ports with no 1-value coverage         ; 44           ;
+; Total output ports with no 0-value coverage         ; 46           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                    ;
++------------------------------+------------------------------+------------------+
+; Node Name                    ; Output Port Name             ; Output Port Type ;
++------------------------------+------------------------------+------------------+
+; |VendingMachine|always0~0    ; |VendingMachine|always0~0    ; out0             ;
+; |VendingMachine|Ret          ; |VendingMachine|Ret          ; regout           ;
+; |VendingMachine|counter[3]   ; |VendingMachine|counter[3]   ; regout           ;
+; |VendingMachine|counter[2]   ; |VendingMachine|counter[2]   ; regout           ;
+; |VendingMachine|always0~1    ; |VendingMachine|always0~1    ; out0             ;
+; |VendingMachine|always0~2    ; |VendingMachine|always0~2    ; out0             ;
+; |VendingMachine|always0~3    ; |VendingMachine|always0~3    ; out0             ;
+; |VendingMachine|always0~4    ; |VendingMachine|always0~4    ; out0             ;
+; |VendingMachine|chng~0       ; |VendingMachine|chng~0       ; out              ;
+; |VendingMachine|chng~1       ; |VendingMachine|chng~1       ; out              ;
+; |VendingMachine|chng~2       ; |VendingMachine|chng~2       ; out              ;
+; |VendingMachine|chng~3       ; |VendingMachine|chng~3       ; out              ;
+; |VendingMachine|Ret~0        ; |VendingMachine|Ret~0        ; out              ;
+; |VendingMachine|always0~5    ; |VendingMachine|always0~5    ; out0             ;
+; |VendingMachine|always0~6    ; |VendingMachine|always0~6    ; out0             ;
+; |VendingMachine|counter[1]   ; |VendingMachine|counter[1]   ; regout           ;
+; |VendingMachine|counter[0]   ; |VendingMachine|counter[0]   ; regout           ;
+; |VendingMachine|flag         ; |VendingMachine|flag         ; regout           ;
+; |VendingMachine|cr~0         ; |VendingMachine|cr~0         ; out              ;
+; |VendingMachine|cr~1         ; |VendingMachine|cr~1         ; out              ;
+; |VendingMachine|cr~2         ; |VendingMachine|cr~2         ; out              ;
+; |VendingMachine|chng~4       ; |VendingMachine|chng~4       ; out              ;
+; |VendingMachine|chng~5       ; |VendingMachine|chng~5       ; out              ;
+; |VendingMachine|chng~6       ; |VendingMachine|chng~6       ; out              ;
+; |VendingMachine|chng~7       ; |VendingMachine|chng~7       ; out              ;
+; |VendingMachine|itm~0        ; |VendingMachine|itm~0        ; out              ;
+; |VendingMachine|itm~2        ; |VendingMachine|itm~2        ; out              ;
+; |VendingMachine|Ret~1        ; |VendingMachine|Ret~1        ; out              ;
+; |VendingMachine|chng[3]~reg0 ; |VendingMachine|chng[3]~reg0 ; regout           ;
+; |VendingMachine|cr~5         ; |VendingMachine|cr~5         ; out              ;
+; |VendingMachine|cr~6         ; |VendingMachine|cr~6         ; out              ;
+; |VendingMachine|chng~8       ; |VendingMachine|chng~8       ; out              ;
+; |VendingMachine|chng~9       ; |VendingMachine|chng~9       ; out              ;
+; |VendingMachine|chng~10      ; |VendingMachine|chng~10      ; out              ;
+; |VendingMachine|chng~11      ; |VendingMachine|chng~11      ; out              ;
+; |VendingMachine|itm~4        ; |VendingMachine|itm~4        ; out              ;
+; |VendingMachine|itm~6        ; |VendingMachine|itm~6        ; out              ;
+; |VendingMachine|Ret~2        ; |VendingMachine|Ret~2        ; out              ;
+; |VendingMachine|always0~9    ; |VendingMachine|always0~9    ; out0             ;
+; |VendingMachine|always0~10   ; |VendingMachine|always0~10   ; out0             ;
+; |VendingMachine|chng[2]~reg0 ; |VendingMachine|chng[2]~reg0 ; regout           ;
+; |VendingMachine|chng[1]~reg0 ; |VendingMachine|chng[1]~reg0 ; regout           ;
+; |VendingMachine|cr~7         ; |VendingMachine|cr~7         ; out              ;
+; |VendingMachine|cr~8         ; |VendingMachine|cr~8         ; out              ;
+; |VendingMachine|cr~9         ; |VendingMachine|cr~9         ; out              ;
+; |VendingMachine|cr~10        ; |VendingMachine|cr~10        ; out              ;
+; |VendingMachine|chng~12      ; |VendingMachine|chng~12      ; out              ;
+; |VendingMachine|chng~13      ; |VendingMachine|chng~13      ; out              ;
+; |VendingMachine|chng~14      ; |VendingMachine|chng~14      ; out              ;
+; |VendingMachine|chng~15      ; |VendingMachine|chng~15      ; out              ;
+; |VendingMachine|itm~8        ; |VendingMachine|itm~8        ; out              ;
+; |VendingMachine|itm~9        ; |VendingMachine|itm~9        ; out              ;
+; |VendingMachine|itm~10       ; |VendingMachine|itm~10       ; out              ;
+; |VendingMachine|Ret~3        ; |VendingMachine|Ret~3        ; out              ;
+; |VendingMachine|cr~13        ; |VendingMachine|cr~13        ; out              ;
+; |VendingMachine|cr~14        ; |VendingMachine|cr~14        ; out              ;
+; |VendingMachine|chng~16      ; |VendingMachine|chng~16      ; out              ;
+; |VendingMachine|chng~17      ; |VendingMachine|chng~17      ; out              ;
+; |VendingMachine|chng~18      ; |VendingMachine|chng~18      ; out              ;
+; |VendingMachine|chng~19      ; |VendingMachine|chng~19      ; out              ;
+; |VendingMachine|itm~12       ; |VendingMachine|itm~12       ; out              ;
+; |VendingMachine|itm~14       ; |VendingMachine|itm~14       ; out              ;
+; |VendingMachine|Ret~4        ; |VendingMachine|Ret~4        ; out              ;
+; |VendingMachine|cr~17        ; |VendingMachine|cr~17        ; out              ;
+; |VendingMachine|cr~18        ; |VendingMachine|cr~18        ; out              ;
+; |VendingMachine|chng~20      ; |VendingMachine|chng~20      ; out              ;
+; |VendingMachine|chng~21      ; |VendingMachine|chng~21      ; out              ;
+; |VendingMachine|chng~22      ; |VendingMachine|chng~22      ; out              ;
+; |VendingMachine|chng~23      ; |VendingMachine|chng~23      ; out              ;
+; |VendingMachine|itm~16       ; |VendingMachine|itm~16       ; out              ;
+; |VendingMachine|itm~18       ; |VendingMachine|itm~18       ; out              ;
+; |VendingMachine|Ret~5        ; |VendingMachine|Ret~5        ; out              ;
+; |VendingMachine|cr~19        ; |VendingMachine|cr~19        ; out              ;
+; |VendingMachine|cr~20        ; |VendingMachine|cr~20        ; out              ;
+; |VendingMachine|cr~21        ; |VendingMachine|cr~21        ; out              ;
+; |VendingMachine|cr~22        ; |VendingMachine|cr~22        ; out              ;
+; |VendingMachine|chng~24      ; |VendingMachine|chng~24      ; out              ;
+; |VendingMachine|chng~25      ; |VendingMachine|chng~25      ; out              ;
+; |VendingMachine|chng~26      ; |VendingMachine|chng~26      ; out              ;
+; |VendingMachine|chng~27      ; |VendingMachine|chng~27      ; out              ;
+; |VendingMachine|itm~20       ; |VendingMachine|itm~20       ; out              ;
+; |VendingMachine|itm~22       ; |VendingMachine|itm~22       ; out              ;
+; |VendingMachine|Ret~6        ; |VendingMachine|Ret~6        ; out              ;
+; |VendingMachine|cr~23        ; |VendingMachine|cr~23        ; out              ;
+; |VendingMachine|cr~24        ; |VendingMachine|cr~24        ; out              ;
+; |VendingMachine|cr~25        ; |VendingMachine|cr~25        ; out              ;
+; |VendingMachine|cr~26        ; |VendingMachine|cr~26        ; out              ;
+; |VendingMachine|chng~28      ; |VendingMachine|chng~28      ; out              ;
+; |VendingMachine|chng~29      ; |VendingMachine|chng~29      ; out              ;
+; |VendingMachine|chng~30      ; |VendingMachine|chng~30      ; out              ;
+; |VendingMachine|chng~31      ; |VendingMachine|chng~31      ; out              ;
+; |VendingMachine|Ret~7        ; |VendingMachine|Ret~7        ; out              ;
+; |VendingMachine|flag~0       ; |VendingMachine|flag~0       ; out              ;
+; |VendingMachine|itm~24       ; |VendingMachine|itm~24       ; out              ;
+; |VendingMachine|itm~26       ; |VendingMachine|itm~26       ; out              ;
+; |VendingMachine|counter~0    ; |VendingMachine|counter~0    ; out              ;
+; |VendingMachine|counter~1    ; |VendingMachine|counter~1    ; out              ;
+; |VendingMachine|counter~2    ; |VendingMachine|counter~2    ; out              ;
+; |VendingMachine|counter~3    ; |VendingMachine|counter~3    ; out              ;
+; |VendingMachine|chng~32      ; |VendingMachine|chng~32      ; out              ;
+; |VendingMachine|chng~33      ; |VendingMachine|chng~33      ; out              ;
+; |VendingMachine|chng~34      ; |VendingMachine|chng~34      ; out              ;
+; |VendingMachine|chng~35      ; |VendingMachine|chng~35      ; out              ;
+; |VendingMachine|cr~27        ; |VendingMachine|cr~27        ; out              ;
+; |VendingMachine|cr~28        ; |VendingMachine|cr~28        ; out              ;
+; |VendingMachine|cr~29        ; |VendingMachine|cr~29        ; out              ;
+; |VendingMachine|cr~30        ; |VendingMachine|cr~30        ; out              ;
+; |VendingMachine|Ret~8        ; |VendingMachine|Ret~8        ; out              ;
+; |VendingMachine|flag~1       ; |VendingMachine|flag~1       ; out              ;
+; |VendingMachine|itm~28       ; |VendingMachine|itm~28       ; out              ;
+; |VendingMachine|itm~30       ; |VendingMachine|itm~30       ; out              ;
+; |VendingMachine|cr~33        ; |VendingMachine|cr~33        ; out              ;
+; |VendingMachine|cr~34        ; |VendingMachine|cr~34        ; out              ;
+; |VendingMachine|itm~32       ; |VendingMachine|itm~32       ; out              ;
+; |VendingMachine|itm~34       ; |VendingMachine|itm~34       ; out              ;
+; |VendingMachine|Ret~9        ; |VendingMachine|Ret~9        ; out              ;
+; |VendingMachine|counter~4    ; |VendingMachine|counter~4    ; out              ;
+; |VendingMachine|counter~5    ; |VendingMachine|counter~5    ; out              ;
+; |VendingMachine|counter~6    ; |VendingMachine|counter~6    ; out              ;
+; |VendingMachine|counter~7    ; |VendingMachine|counter~7    ; out              ;
+; |VendingMachine|flag~2       ; |VendingMachine|flag~2       ; out              ;
+; |VendingMachine|chng[0]~reg0 ; |VendingMachine|chng[0]~reg0 ; regout           ;
+; |VendingMachine|flag~3       ; |VendingMachine|flag~3       ; out              ;
+; |VendingMachine|itm[1]~reg0  ; |VendingMachine|itm[1]~reg0  ; regout           ;
+; |VendingMachine|itm[3]~reg0  ; |VendingMachine|itm[3]~reg0  ; regout           ;
+; |VendingMachine|cr[0]~reg0   ; |VendingMachine|cr[0]~reg0   ; regout           ;
+; |VendingMachine|cr[1]~reg0   ; |VendingMachine|cr[1]~reg0   ; regout           ;
+; |VendingMachine|clk          ; |VendingMachine|clk          ; out              ;
+; |VendingMachine|shekel       ; |VendingMachine|shekel       ; out              ;
+; |VendingMachine|jelly        ; |VendingMachine|jelly        ; out              ;
+; |VendingMachine|bubbly       ; |VendingMachine|bubbly       ; out              ;
+; |VendingMachine|sour         ; |VendingMachine|sour         ; out              ;
+; |VendingMachine|cr[0]        ; |VendingMachine|cr[0]        ; pin_out          ;
+; |VendingMachine|cr[1]        ; |VendingMachine|cr[1]        ; pin_out          ;
+; |VendingMachine|itm[1]       ; |VendingMachine|itm[1]       ; pin_out          ;
+; |VendingMachine|itm[3]       ; |VendingMachine|itm[3]       ; pin_out          ;
+; |VendingMachine|chng[0]      ; |VendingMachine|chng[0]      ; pin_out          ;
+; |VendingMachine|chng[1]      ; |VendingMachine|chng[1]      ; pin_out          ;
+; |VendingMachine|chng[2]      ; |VendingMachine|chng[2]      ; pin_out          ;
+; |VendingMachine|chng[3]      ; |VendingMachine|chng[3]      ; pin_out          ;
+; |VendingMachine|LessThan0~0  ; |VendingMachine|LessThan0~0  ; out0             ;
+; |VendingMachine|LessThan0~1  ; |VendingMachine|LessThan0~1  ; out0             ;
+; |VendingMachine|LessThan0~2  ; |VendingMachine|LessThan0~2  ; out0             ;
+; |VendingMachine|LessThan0~3  ; |VendingMachine|LessThan0~3  ; out0             ;
+; |VendingMachine|LessThan0~4  ; |VendingMachine|LessThan0~4  ; out0             ;
+; |VendingMachine|LessThan0~5  ; |VendingMachine|LessThan0~5  ; out0             ;
+; |VendingMachine|LessThan1~0  ; |VendingMachine|LessThan1~0  ; out0             ;
+; |VendingMachine|LessThan1~1  ; |VendingMachine|LessThan1~1  ; out0             ;
+; |VendingMachine|LessThan1~2  ; |VendingMachine|LessThan1~2  ; out0             ;
+; |VendingMachine|LessThan1~3  ; |VendingMachine|LessThan1~3  ; out0             ;
+; |VendingMachine|LessThan2~0  ; |VendingMachine|LessThan2~0  ; out0             ;
+; |VendingMachine|LessThan2~1  ; |VendingMachine|LessThan2~1  ; out0             ;
+; |VendingMachine|LessThan3~0  ; |VendingMachine|LessThan3~0  ; out0             ;
+; |VendingMachine|LessThan3~1  ; |VendingMachine|LessThan3~1  ; out0             ;
+; |VendingMachine|LessThan3~2  ; |VendingMachine|LessThan3~2  ; out0             ;
+; |VendingMachine|LessThan3~3  ; |VendingMachine|LessThan3~3  ; out0             ;
+; |VendingMachine|LessThan3~4  ; |VendingMachine|LessThan3~4  ; out0             ;
+; |VendingMachine|Add0~0       ; |VendingMachine|Add0~0       ; out0             ;
+; |VendingMachine|Add0~1       ; |VendingMachine|Add0~1       ; out0             ;
+; |VendingMachine|Add0~2       ; |VendingMachine|Add0~2       ; out0             ;
+; |VendingMachine|Add0~3       ; |VendingMachine|Add0~3       ; out0             ;
+; |VendingMachine|Add0~4       ; |VendingMachine|Add0~4       ; out0             ;
+; |VendingMachine|Add0~5       ; |VendingMachine|Add0~5       ; out0             ;
+; |VendingMachine|Add0~6       ; |VendingMachine|Add0~6       ; out0             ;
+; |VendingMachine|Add1~0       ; |VendingMachine|Add1~0       ; out0             ;
+; |VendingMachine|Add1~1       ; |VendingMachine|Add1~1       ; out0             ;
+; |VendingMachine|Add1~2       ; |VendingMachine|Add1~2       ; out0             ;
+; |VendingMachine|Add2~0       ; |VendingMachine|Add2~0       ; out0             ;
+; |VendingMachine|Add2~1       ; |VendingMachine|Add2~1       ; out0             ;
+; |VendingMachine|Add2~3       ; |VendingMachine|Add2~3       ; out0             ;
+; |VendingMachine|Add3~0       ; |VendingMachine|Add3~0       ; out0             ;
+; |VendingMachine|Add3~1       ; |VendingMachine|Add3~1       ; out0             ;
+; |VendingMachine|Add3~2       ; |VendingMachine|Add3~2       ; out0             ;
+; |VendingMachine|Add3~3       ; |VendingMachine|Add3~3       ; out0             ;
+; |VendingMachine|Add4~0       ; |VendingMachine|Add4~0       ; out0             ;
+; |VendingMachine|Add4~1       ; |VendingMachine|Add4~1       ; out0             ;
+; |VendingMachine|Add4~2       ; |VendingMachine|Add4~2       ; out0             ;
+; |VendingMachine|Add4~3       ; |VendingMachine|Add4~3       ; out0             ;
+; |VendingMachine|Add4~5       ; |VendingMachine|Add4~5       ; out0             ;
++------------------------------+------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                     ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |VendingMachine|itm~1       ; |VendingMachine|itm~1       ; out              ;
+; |VendingMachine|itm~3       ; |VendingMachine|itm~3       ; out              ;
+; |VendingMachine|cr~3        ; |VendingMachine|cr~3        ; out              ;
+; |VendingMachine|cr~4        ; |VendingMachine|cr~4        ; out              ;
+; |VendingMachine|itm~5       ; |VendingMachine|itm~5       ; out              ;
+; |VendingMachine|itm~7       ; |VendingMachine|itm~7       ; out              ;
+; |VendingMachine|itm~11      ; |VendingMachine|itm~11      ; out              ;
+; |VendingMachine|cr~11       ; |VendingMachine|cr~11       ; out              ;
+; |VendingMachine|cr~12       ; |VendingMachine|cr~12       ; out              ;
+; |VendingMachine|itm~13      ; |VendingMachine|itm~13      ; out              ;
+; |VendingMachine|itm~15      ; |VendingMachine|itm~15      ; out              ;
+; |VendingMachine|cr~15       ; |VendingMachine|cr~15       ; out              ;
+; |VendingMachine|cr~16       ; |VendingMachine|cr~16       ; out              ;
+; |VendingMachine|itm~17      ; |VendingMachine|itm~17      ; out              ;
+; |VendingMachine|itm~19      ; |VendingMachine|itm~19      ; out              ;
+; |VendingMachine|itm~21      ; |VendingMachine|itm~21      ; out              ;
+; |VendingMachine|itm~23      ; |VendingMachine|itm~23      ; out              ;
+; |VendingMachine|itm~25      ; |VendingMachine|itm~25      ; out              ;
+; |VendingMachine|itm~27      ; |VendingMachine|itm~27      ; out              ;
+; |VendingMachine|itm~29      ; |VendingMachine|itm~29      ; out              ;
+; |VendingMachine|itm~31      ; |VendingMachine|itm~31      ; out              ;
+; |VendingMachine|cr~31       ; |VendingMachine|cr~31       ; out              ;
+; |VendingMachine|cr~32       ; |VendingMachine|cr~32       ; out              ;
+; |VendingMachine|itm~33      ; |VendingMachine|itm~33      ; out              ;
+; |VendingMachine|itm~35      ; |VendingMachine|itm~35      ; out              ;
+; |VendingMachine|itm[0]~reg0 ; |VendingMachine|itm[0]~reg0 ; regout           ;
+; |VendingMachine|itm[2]~reg0 ; |VendingMachine|itm[2]~reg0 ; regout           ;
+; |VendingMachine|cr[2]~reg0  ; |VendingMachine|cr[2]~reg0  ; regout           ;
+; |VendingMachine|cr[3]~reg0  ; |VendingMachine|cr[3]~reg0  ; regout           ;
+; |VendingMachine|ret         ; |VendingMachine|ret         ; out              ;
+; |VendingMachine|cr[2]       ; |VendingMachine|cr[2]       ; pin_out          ;
+; |VendingMachine|cr[3]       ; |VendingMachine|cr[3]       ; pin_out          ;
+; |VendingMachine|itm[0]      ; |VendingMachine|itm[0]      ; pin_out          ;
+; |VendingMachine|itm[2]      ; |VendingMachine|itm[2]      ; pin_out          ;
+; |VendingMachine|LessThan2~2 ; |VendingMachine|LessThan2~2 ; out0             ;
+; |VendingMachine|LessThan2~3 ; |VendingMachine|LessThan2~3 ; out0             ;
+; |VendingMachine|LessThan2~4 ; |VendingMachine|LessThan2~4 ; out0             ;
+; |VendingMachine|Add1~3      ; |VendingMachine|Add1~3      ; out0             ;
+; |VendingMachine|Add1~4      ; |VendingMachine|Add1~4      ; out0             ;
+; |VendingMachine|Add2~2      ; |VendingMachine|Add2~2      ; out0             ;
+; |VendingMachine|Add3~4      ; |VendingMachine|Add3~4      ; out0             ;
+; |VendingMachine|Add3~5      ; |VendingMachine|Add3~5      ; out0             ;
+; |VendingMachine|Add4~4      ; |VendingMachine|Add4~4      ; out0             ;
+; |VendingMachine|Equal0~0    ; |VendingMachine|Equal0~0    ; out0             ;
++-----------------------------+-----------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                     ;
++-----------------------------+-----------------------------+------------------+
+; Node Name                   ; Output Port Name            ; Output Port Type ;
++-----------------------------+-----------------------------+------------------+
+; |VendingMachine|itm~1       ; |VendingMachine|itm~1       ; out              ;
+; |VendingMachine|itm~3       ; |VendingMachine|itm~3       ; out              ;
+; |VendingMachine|always0~7   ; |VendingMachine|always0~7   ; out0             ;
+; |VendingMachine|always0~8   ; |VendingMachine|always0~8   ; out0             ;
+; |VendingMachine|cr~3        ; |VendingMachine|cr~3        ; out              ;
+; |VendingMachine|cr~4        ; |VendingMachine|cr~4        ; out              ;
+; |VendingMachine|itm~5       ; |VendingMachine|itm~5       ; out              ;
+; |VendingMachine|itm~7       ; |VendingMachine|itm~7       ; out              ;
+; |VendingMachine|itm~11      ; |VendingMachine|itm~11      ; out              ;
+; |VendingMachine|cr~11       ; |VendingMachine|cr~11       ; out              ;
+; |VendingMachine|cr~12       ; |VendingMachine|cr~12       ; out              ;
+; |VendingMachine|itm~13      ; |VendingMachine|itm~13      ; out              ;
+; |VendingMachine|itm~15      ; |VendingMachine|itm~15      ; out              ;
+; |VendingMachine|cr~15       ; |VendingMachine|cr~15       ; out              ;
+; |VendingMachine|cr~16       ; |VendingMachine|cr~16       ; out              ;
+; |VendingMachine|itm~17      ; |VendingMachine|itm~17      ; out              ;
+; |VendingMachine|itm~19      ; |VendingMachine|itm~19      ; out              ;
+; |VendingMachine|itm~21      ; |VendingMachine|itm~21      ; out              ;
+; |VendingMachine|itm~23      ; |VendingMachine|itm~23      ; out              ;
+; |VendingMachine|itm~25      ; |VendingMachine|itm~25      ; out              ;
+; |VendingMachine|itm~27      ; |VendingMachine|itm~27      ; out              ;
+; |VendingMachine|itm~29      ; |VendingMachine|itm~29      ; out              ;
+; |VendingMachine|itm~31      ; |VendingMachine|itm~31      ; out              ;
+; |VendingMachine|cr~31       ; |VendingMachine|cr~31       ; out              ;
+; |VendingMachine|cr~32       ; |VendingMachine|cr~32       ; out              ;
+; |VendingMachine|itm~33      ; |VendingMachine|itm~33      ; out              ;
+; |VendingMachine|itm~35      ; |VendingMachine|itm~35      ; out              ;
+; |VendingMachine|itm[0]~reg0 ; |VendingMachine|itm[0]~reg0 ; regout           ;
+; |VendingMachine|itm[2]~reg0 ; |VendingMachine|itm[2]~reg0 ; regout           ;
+; |VendingMachine|cr[2]~reg0  ; |VendingMachine|cr[2]~reg0  ; regout           ;
+; |VendingMachine|cr[3]~reg0  ; |VendingMachine|cr[3]~reg0  ; regout           ;
+; |VendingMachine|ret         ; |VendingMachine|ret         ; out              ;
+; |VendingMachine|cr[2]       ; |VendingMachine|cr[2]       ; pin_out          ;
+; |VendingMachine|cr[3]       ; |VendingMachine|cr[3]       ; pin_out          ;
+; |VendingMachine|itm[0]      ; |VendingMachine|itm[0]      ; pin_out          ;
+; |VendingMachine|itm[2]      ; |VendingMachine|itm[2]      ; pin_out          ;
+; |VendingMachine|LessThan2~2 ; |VendingMachine|LessThan2~2 ; out0             ;
+; |VendingMachine|LessThan2~3 ; |VendingMachine|LessThan2~3 ; out0             ;
+; |VendingMachine|LessThan2~4 ; |VendingMachine|LessThan2~4 ; out0             ;
+; |VendingMachine|Add1~3      ; |VendingMachine|Add1~3      ; out0             ;
+; |VendingMachine|Add1~4      ; |VendingMachine|Add1~4      ; out0             ;
+; |VendingMachine|Add2~2      ; |VendingMachine|Add2~2      ; out0             ;
+; |VendingMachine|Add3~4      ; |VendingMachine|Add3~4      ; out0             ;
+; |VendingMachine|Add3~5      ; |VendingMachine|Add3~5      ; out0             ;
+; |VendingMachine|Add4~4      ; |VendingMachine|Add4~4      ; out0             ;
+; |VendingMachine|Equal0~0    ; |VendingMachine|Equal0~0    ; out0             ;
++-----------------------------+-----------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Tue May 17 16:36:41 2016
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off LabDigitalProject -c LabDigitalProject
+Info: Using vector source file "C:/Users/Mohammed Shilleh/Desktop/Quartus WorkSpace/LabDigitalProject/LabDigitalProject.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      79.56 %
+Info: Number of transitions in simulation is 1017
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 172 megabytes
+    Info: Processing ended: Tue May 17 16:36:41 2016
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

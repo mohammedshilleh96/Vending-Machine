@@ -1,0 +1,758 @@
+Classic Timing Analyzer report for LabDigitalProject
+Wed May 18 14:18:58 2016
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. Clock Hold: 'clk'
+  8. tsu
+  9. tco
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                         ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------+--------------------------------+------------+----------+--------------+
+; Type                         ; Slack                                    ; Required Time ; Actual Time                      ; From                       ; To                             ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------+--------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A                                      ; None          ; 3.079 ns                         ; Jelly                      ; VendingMachine:inst|chng[0]    ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A                                      ; None          ; 16.294 ns                        ; seven_Segment:inst3|out[1] ; pin_name11[1]                  ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A                                      ; None          ; 4.198 ns                         ; ret                        ; VendingMachine:inst|counter[3] ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A                                      ; None          ; 154.11 MHz ( period = 6.489 ns ) ; VendingMachine:inst|cr[2]  ; VendingMachine:inst|chng[0]    ; clk        ; clk      ; 0            ;
+; Clock Hold: 'clk'            ; Not operational: Clock Skew > Data Delay ; None          ; N/A                              ; VendingMachine:inst|itm[3] ; seven_Segment:inst4|out[6]     ; clk        ; clk      ; 84           ;
+; Total number of failed paths ;                                          ;               ;                                  ;                            ;                                ;            ;          ; 84           ;
++------------------------------+------------------------------------------+---------------+----------------------------------+----------------------------+--------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                               ; To                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 154.11 MHz ( period = 6.489 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 5.959 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 5.770 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 5.770 ns                ;
+; N/A                                     ; 158.73 MHz ( period = 6.300 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 5.770 ns                ;
+; N/A                                     ; 162.42 MHz ( period = 6.157 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 5.627 ns                ;
+; N/A                                     ; 167.56 MHz ( period = 5.968 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 5.438 ns                ;
+; N/A                                     ; 167.56 MHz ( period = 5.968 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 5.438 ns                ;
+; N/A                                     ; 167.56 MHz ( period = 5.968 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 5.438 ns                ;
+; N/A                                     ; 167.64 MHz ( period = 5.965 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 167.64 MHz ( period = 5.965 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 167.64 MHz ( period = 5.965 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 4.154 ns                ;
+; N/A                                     ; 168.12 MHz ( period = 5.948 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 5.721 ns                ;
+; N/A                                     ; 168.12 MHz ( period = 5.948 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 5.721 ns                ;
+; N/A                                     ; 168.12 MHz ( period = 5.948 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 5.721 ns                ;
+; N/A                                     ; 168.12 MHz ( period = 5.948 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 5.721 ns                ;
+; N/A                                     ; 168.18 MHz ( period = 5.946 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 168.49 MHz ( period = 5.935 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 4.124 ns                ;
+; N/A                                     ; 168.49 MHz ( period = 5.935 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 4.124 ns                ;
+; N/A                                     ; 168.49 MHz ( period = 5.935 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 4.124 ns                ;
+; N/A                                     ; 168.78 MHz ( period = 5.925 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 4.113 ns                ;
+; N/A                                     ; 168.78 MHz ( period = 5.925 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 4.113 ns                ;
+; N/A                                     ; 168.78 MHz ( period = 5.925 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 4.113 ns                ;
+; N/A                                     ; 171.35 MHz ( period = 5.836 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 4.024 ns                ;
+; N/A                                     ; 171.35 MHz ( period = 5.836 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 4.024 ns                ;
+; N/A                                     ; 171.35 MHz ( period = 5.836 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 4.024 ns                ;
+; N/A                                     ; 171.64 MHz ( period = 5.826 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 5.296 ns                ;
+; N/A                                     ; 171.85 MHz ( period = 5.819 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 5.580 ns                ;
+; N/A                                     ; 173.19 MHz ( period = 5.774 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 3.963 ns                ;
+; N/A                                     ; 173.19 MHz ( period = 5.774 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 3.963 ns                ;
+; N/A                                     ; 173.19 MHz ( period = 5.774 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 3.963 ns                ;
+; N/A                                     ; 176.49 MHz ( period = 5.666 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 3.857 ns                ;
+; N/A                                     ; 176.49 MHz ( period = 5.666 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 3.857 ns                ;
+; N/A                                     ; 176.49 MHz ( period = 5.666 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 3.857 ns                ;
+; N/A                                     ; 176.77 MHz ( period = 5.657 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 5.418 ns                ;
+; N/A                                     ; 176.77 MHz ( period = 5.657 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 5.418 ns                ;
+; N/A                                     ; 177.40 MHz ( period = 5.637 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 5.107 ns                ;
+; N/A                                     ; 177.40 MHz ( period = 5.637 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 5.107 ns                ;
+; N/A                                     ; 177.40 MHz ( period = 5.637 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 5.107 ns                ;
+; N/A                                     ; 178.06 MHz ( period = 5.616 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 5.389 ns                ;
+; N/A                                     ; 178.06 MHz ( period = 5.616 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 5.389 ns                ;
+; N/A                                     ; 178.06 MHz ( period = 5.616 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 5.389 ns                ;
+; N/A                                     ; 178.06 MHz ( period = 5.616 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 5.389 ns                ;
+; N/A                                     ; 181.23 MHz ( period = 5.518 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 5.279 ns                ;
+; N/A                                     ; 182.25 MHz ( period = 5.487 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 5.248 ns                ;
+; N/A                                     ; 183.28 MHz ( period = 5.456 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 4.926 ns                ;
+; N/A                                     ; 185.01 MHz ( period = 5.405 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 3.885 ns                ;
+; N/A                                     ; 185.05 MHz ( period = 5.404 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 3.896 ns                ;
+; N/A                                     ; 185.05 MHz ( period = 5.404 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 3.896 ns                ;
+; N/A                                     ; 185.05 MHz ( period = 5.404 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 3.896 ns                ;
+; N/A                                     ; 185.05 MHz ( period = 5.404 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 3.896 ns                ;
+; N/A                                     ; 185.60 MHz ( period = 5.388 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|chng[1]        ; clk        ; clk      ; None                        ; None                      ; 4.858 ns                ;
+; N/A                                     ; 185.60 MHz ( period = 5.388 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|chng[2]        ; clk        ; clk      ; None                        ; None                      ; 4.858 ns                ;
+; N/A                                     ; 185.60 MHz ( period = 5.388 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|chng[3]        ; clk        ; clk      ; None                        ; None                      ; 4.858 ns                ;
+; N/A                                     ; 186.08 MHz ( period = 5.374 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 186.08 MHz ( period = 5.374 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 186.08 MHz ( period = 5.374 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 186.08 MHz ( period = 5.374 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 186.25 MHz ( period = 5.369 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 5.142 ns                ;
+; N/A                                     ; 186.25 MHz ( period = 5.369 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 5.142 ns                ;
+; N/A                                     ; 186.25 MHz ( period = 5.369 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 5.142 ns                ;
+; N/A                                     ; 186.25 MHz ( period = 5.369 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 5.142 ns                ;
+; N/A                                     ; 186.43 MHz ( period = 5.364 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 3.855 ns                ;
+; N/A                                     ; 186.43 MHz ( period = 5.364 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 3.855 ns                ;
+; N/A                                     ; 186.43 MHz ( period = 5.364 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 3.855 ns                ;
+; N/A                                     ; 186.43 MHz ( period = 5.364 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 3.855 ns                ;
+; N/A                                     ; 187.72 MHz ( period = 5.327 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A                                     ; 187.72 MHz ( period = 5.327 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A                                     ; 187.72 MHz ( period = 5.327 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A                                     ; 187.72 MHz ( period = 5.327 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A                                     ; 187.79 MHz ( period = 5.325 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 5.086 ns                ;
+; N/A                                     ; 187.79 MHz ( period = 5.325 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 5.086 ns                ;
+; N/A                                     ; 189.57 MHz ( period = 5.275 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 3.766 ns                ;
+; N/A                                     ; 189.57 MHz ( period = 5.275 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 3.766 ns                ;
+; N/A                                     ; 189.57 MHz ( period = 5.275 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 3.766 ns                ;
+; N/A                                     ; 189.57 MHz ( period = 5.275 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 3.766 ns                ;
+; N/A                                     ; 191.35 MHz ( period = 5.226 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 192.83 MHz ( period = 5.186 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 4.947 ns                ;
+; N/A                                     ; 193.95 MHz ( period = 5.156 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 3.648 ns                ;
+; N/A                                     ; 193.95 MHz ( period = 5.156 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 4.917 ns                ;
+; N/A                                     ; 193.95 MHz ( period = 5.156 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 3.648 ns                ;
+; N/A                                     ; 193.95 MHz ( period = 5.156 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 3.648 ns                ;
+; N/A                                     ; 193.95 MHz ( period = 5.156 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 3.648 ns                ;
+; N/A                                     ; 195.81 MHz ( period = 5.107 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|itm[0]         ; clk        ; clk      ; None                        ; None                      ; 3.601 ns                ;
+; N/A                                     ; 195.81 MHz ( period = 5.107 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|itm[1]         ; clk        ; clk      ; None                        ; None                      ; 3.601 ns                ;
+; N/A                                     ; 195.81 MHz ( period = 5.107 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|itm[2]         ; clk        ; clk      ; None                        ; None                      ; 3.601 ns                ;
+; N/A                                     ; 195.81 MHz ( period = 5.107 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|itm[3]         ; clk        ; clk      ; None                        ; None                      ; 3.601 ns                ;
+; N/A                                     ; 197.47 MHz ( period = 5.064 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 3.544 ns                ;
+; N/A                                     ; 200.24 MHz ( period = 4.994 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 4.755 ns                ;
+; N/A                                     ; 200.24 MHz ( period = 4.994 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 4.755 ns                ;
+; N/A                                     ; 200.96 MHz ( period = 4.976 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 3.164 ns                ;
+; N/A                                     ; 203.05 MHz ( period = 4.925 ns )                    ; VendingMachine:inst|flag           ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 3.405 ns                ;
+; N/A                                     ; 205.89 MHz ( period = 4.857 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.618 ns                ;
+; N/A                                     ; 205.97 MHz ( period = 4.855 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 3.335 ns                ;
+; N/A                                     ; 205.97 MHz ( period = 4.855 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 3.335 ns                ;
+; N/A                                     ; 205.97 MHz ( period = 4.855 ns )                    ; VendingMachine:inst|cr[3]          ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 4.616 ns                ;
+; N/A                                     ; 206.19 MHz ( period = 4.850 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 4.611 ns                ;
+; N/A                                     ; 206.48 MHz ( period = 4.843 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 3.034 ns                ;
+; N/A                                     ; 206.65 MHz ( period = 4.839 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.600 ns                ;
+; N/A                                     ; 207.25 MHz ( period = 4.825 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 3.305 ns                ;
+; N/A                                     ; 207.25 MHz ( period = 4.825 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 3.305 ns                ;
+; N/A                                     ; 207.68 MHz ( period = 4.815 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 3.294 ns                ;
+; N/A                                     ; 207.68 MHz ( period = 4.815 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 3.294 ns                ;
+; N/A                                     ; 207.90 MHz ( period = 4.810 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 2.999 ns                ;
+; N/A                                     ; 209.21 MHz ( period = 4.780 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 2.969 ns                ;
+; N/A                                     ; 211.60 MHz ( period = 4.726 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 3.205 ns                ;
+; N/A                                     ; 211.60 MHz ( period = 4.726 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 3.205 ns                ;
+; N/A                                     ; 211.77 MHz ( period = 4.722 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 3.202 ns                ;
+; N/A                                     ; 212.18 MHz ( period = 4.713 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.474 ns                ;
+; N/A                                     ; 213.13 MHz ( period = 4.692 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 3.172 ns                ;
+; N/A                                     ; 213.58 MHz ( period = 4.682 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 3.161 ns                ;
+; N/A                                     ; 213.63 MHz ( period = 4.681 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|chng[0]        ; clk        ; clk      ; None                        ; None                      ; 2.869 ns                ;
+; N/A                                     ; 214.32 MHz ( period = 4.666 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 4.427 ns                ;
+; N/A                                     ; 215.84 MHz ( period = 4.633 ns )                    ; VendingMachine:inst|counter[3]     ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 3.113 ns                ;
+; N/A                                     ; 216.64 MHz ( period = 4.616 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 4.377 ns                ;
+; N/A                                     ; 217.20 MHz ( period = 4.604 ns )                    ; frequencyDivider:inst1|counter[0]  ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 4.365 ns                ;
+; N/A                                     ; 217.25 MHz ( period = 4.603 ns )                    ; VendingMachine:inst|counter[2]     ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 3.083 ns                ;
+; N/A                                     ; 217.49 MHz ( period = 4.598 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 4.359 ns                ;
+; N/A                                     ; 217.72 MHz ( period = 4.593 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 3.072 ns                ;
+; N/A                                     ; 217.72 MHz ( period = 4.593 ns )                    ; VendingMachine:inst|counter[0]     ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 3.072 ns                ;
+; N/A                                     ; 218.44 MHz ( period = 4.578 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 3.060 ns                ;
+; N/A                                     ; 218.44 MHz ( period = 4.578 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 3.060 ns                ;
+; N/A                                     ; 219.11 MHz ( period = 4.564 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|cr[1]          ; clk        ; clk      ; None                        ; None                      ; 4.325 ns                ;
+; N/A                                     ; 219.11 MHz ( period = 4.564 ns )                    ; VendingMachine:inst|cr[1]          ; VendingMachine:inst|cr[2]          ; clk        ; clk      ; None                        ; None                      ; 4.325 ns                ;
+; N/A                                     ; 219.64 MHz ( period = 4.553 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.314 ns                ;
+; N/A                                     ; 220.46 MHz ( period = 4.536 ns )                    ; frequencyDivider:inst1|counter[1]  ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 4.297 ns                ;
+; N/A                                     ; 222.02 MHz ( period = 4.504 ns )                    ; VendingMachine:inst|counter[1]     ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 2.983 ns                ;
+; N/A                                     ; 222.57 MHz ( period = 4.493 ns )                    ; frequencyDivider:inst1|counter[23] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.254 ns                ;
+; N/A                                     ; 223.26 MHz ( period = 4.479 ns )                    ; frequencyDivider:inst1|counter[2]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.241 ns                ;
+; N/A                                     ; 223.61 MHz ( period = 4.472 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 4.233 ns                ;
+; N/A                                     ; 224.77 MHz ( period = 4.449 ns )                    ; frequencyDivider:inst1|counter[3]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.211 ns                ;
+; N/A                                     ; 224.82 MHz ( period = 4.448 ns )                    ; frequencyDivider:inst1|counter[0]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.210 ns                ;
+; N/A                                     ; 225.02 MHz ( period = 4.444 ns )                    ; frequencyDivider:inst1|counter[2]  ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 4.205 ns                ;
+; N/A                                     ; 225.68 MHz ( period = 4.431 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|cr[0]          ; clk        ; clk      ; None                        ; None                      ; 2.913 ns                ;
+; N/A                                     ; 228.21 MHz ( period = 4.382 ns )                    ; frequencyDivider:inst1|counter[3]  ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 4.143 ns                ;
+; N/A                                     ; 228.31 MHz ( period = 4.380 ns )                    ; frequencyDivider:inst1|counter[1]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.142 ns                ;
+; N/A                                     ; 228.68 MHz ( period = 4.373 ns )                    ; VendingMachine:inst|cr[2]          ; VendingMachine:inst|Ret            ; clk        ; clk      ; None                        ; None                      ; 5.413 ns                ;
+; N/A                                     ; 231.27 MHz ( period = 4.324 ns )                    ; frequencyDivider:inst1|counter[5]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.086 ns                ;
+; N/A                                     ; 231.91 MHz ( period = 4.312 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 4.073 ns                ;
+; N/A                                     ; 232.18 MHz ( period = 4.307 ns )                    ; frequencyDivider:inst1|counter[9]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 4.069 ns                ;
+; N/A                                     ; 235.18 MHz ( period = 4.252 ns )                    ; frequencyDivider:inst1|counter[23] ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 4.013 ns                ;
+; N/A                                     ; 235.96 MHz ( period = 4.238 ns )                    ; frequencyDivider:inst1|counter[2]  ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 4.000 ns                ;
+; N/A                                     ; 236.69 MHz ( period = 4.225 ns )                    ; frequencyDivider:inst1|counter[0]  ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 3.987 ns                ;
+; N/A                                     ; 237.36 MHz ( period = 4.213 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 3.973 ns                ;
+; N/A                                     ; 237.42 MHz ( period = 4.212 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[3]  ; clk        ; clk      ; None                        ; None                      ; 3.972 ns                ;
+; N/A                                     ; 237.42 MHz ( period = 4.212 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 3.972 ns                ;
+; N/A                                     ; 237.42 MHz ( period = 4.212 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 3.972 ns                ;
+; N/A                                     ; 237.47 MHz ( period = 4.211 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 3.971 ns                ;
+; N/A                                     ; 237.59 MHz ( period = 4.209 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 3.969 ns                ;
+; N/A                                     ; 237.64 MHz ( period = 4.208 ns )                    ; frequencyDivider:inst1|counter[3]  ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 3.970 ns                ;
+; N/A                                     ; 237.70 MHz ( period = 4.207 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 3.967 ns                ;
+; N/A                                     ; 237.81 MHz ( period = 4.205 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[2]  ; clk        ; clk      ; None                        ; None                      ; 3.965 ns                ;
+; N/A                                     ; 237.87 MHz ( period = 4.204 ns )                    ; frequencyDivider:inst1|counter[15] ; frequencyDivider:inst1|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 3.964 ns                ;
+; N/A                                     ; 237.93 MHz ( period = 4.203 ns )                    ; frequencyDivider:inst1|counter[4]  ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 3.964 ns                ;
+; N/A                                     ; 238.10 MHz ( period = 4.200 ns )                    ; frequencyDivider:inst1|counter[21] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.961 ns                ;
+; N/A                                     ; 238.38 MHz ( period = 4.195 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 3.955 ns                ;
+; N/A                                     ; 238.44 MHz ( period = 4.194 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[3]  ; clk        ; clk      ; None                        ; None                      ; 3.954 ns                ;
+; N/A                                     ; 238.44 MHz ( period = 4.194 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 3.954 ns                ;
+; N/A                                     ; 238.44 MHz ( period = 4.194 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 3.954 ns                ;
+; N/A                                     ; 238.49 MHz ( period = 4.193 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 3.953 ns                ;
+; N/A                                     ; 238.61 MHz ( period = 4.191 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 3.951 ns                ;
+; N/A                                     ; 238.72 MHz ( period = 4.189 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 3.949 ns                ;
+; N/A                                     ; 238.83 MHz ( period = 4.187 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[2]  ; clk        ; clk      ; None                        ; None                      ; 3.947 ns                ;
+; N/A                                     ; 238.89 MHz ( period = 4.186 ns )                    ; frequencyDivider:inst1|counter[13] ; frequencyDivider:inst1|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 3.946 ns                ;
+; N/A                                     ; 239.81 MHz ( period = 4.170 ns )                    ; frequencyDivider:inst1|counter[4]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.932 ns                ;
+; N/A                                     ; 240.56 MHz ( period = 4.157 ns )                    ; frequencyDivider:inst1|counter[1]  ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 3.919 ns                ;
+; N/A                                     ; 242.31 MHz ( period = 4.127 ns )                    ; frequencyDivider:inst1|counter[5]  ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 3.888 ns                ;
+; N/A                                     ; 244.26 MHz ( period = 4.094 ns )                    ; frequencyDivider:inst1|counter[8]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.856 ns                ;
+; N/A                                     ; 244.92 MHz ( period = 4.083 ns )                    ; frequencyDivider:inst1|counter[5]  ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 3.845 ns                ;
+; N/A                                     ; 245.76 MHz ( period = 4.069 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 245.82 MHz ( period = 4.068 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[3]  ; clk        ; clk      ; None                        ; None                      ; 3.828 ns                ;
+; N/A                                     ; 245.82 MHz ( period = 4.068 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 3.828 ns                ;
+; N/A                                     ; 245.82 MHz ( period = 4.068 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 3.828 ns                ;
+; N/A                                     ; 245.88 MHz ( period = 4.067 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 3.827 ns                ;
+; N/A                                     ; 245.94 MHz ( period = 4.066 ns )                    ; frequencyDivider:inst1|counter[9]  ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 3.828 ns                ;
+; N/A                                     ; 246.00 MHz ( period = 4.065 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 3.825 ns                ;
+; N/A                                     ; 246.12 MHz ( period = 4.063 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 3.823 ns                ;
+; N/A                                     ; 246.24 MHz ( period = 4.061 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[2]  ; clk        ; clk      ; None                        ; None                      ; 3.821 ns                ;
+; N/A                                     ; 246.31 MHz ( period = 4.060 ns )                    ; frequencyDivider:inst1|counter[14] ; frequencyDivider:inst1|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 3.820 ns                ;
+; N/A                                     ; 246.43 MHz ( period = 4.058 ns )                    ; frequencyDivider:inst1|counter[10] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.819 ns                ;
+; N/A                                     ; 247.46 MHz ( period = 4.041 ns )                    ; VendingMachine:inst|cr[0]          ; VendingMachine:inst|Ret            ; clk        ; clk      ; None                        ; None                      ; 5.081 ns                ;
+; N/A                                     ; 248.57 MHz ( period = 4.023 ns )                    ; frequencyDivider:inst1|counter[22] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.784 ns                ;
+; N/A                                     ; 250.06 MHz ( period = 3.999 ns )                    ; frequencyDivider:inst1|counter[16] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.760 ns                ;
+; N/A                                     ; 250.75 MHz ( period = 3.988 ns )                    ; frequencyDivider:inst1|counter[0]  ; frequencyDivider:inst1|counter[24] ; clk        ; clk      ; None                        ; None                      ; 3.750 ns                ;
+; N/A                                     ; 252.59 MHz ( period = 3.959 ns )                    ; frequencyDivider:inst1|counter[21] ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 3.720 ns                ;
+; N/A                                     ; 254.52 MHz ( period = 3.929 ns )                    ; frequencyDivider:inst1|counter[4]  ; frequencyDivider:inst1|counter[21] ; clk        ; clk      ; None                        ; None                      ; 3.691 ns                ;
+; N/A                                     ; 254.52 MHz ( period = 3.929 ns )                    ; frequencyDivider:inst1|counter[6]  ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.690 ns                ;
+; N/A                                     ; 254.91 MHz ( period = 3.923 ns )                    ; frequencyDivider:inst1|counter[20] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.684 ns                ;
+; N/A                                     ; 255.10 MHz ( period = 3.920 ns )                    ; frequencyDivider:inst1|counter[1]  ; frequencyDivider:inst1|counter[24] ; clk        ; clk      ; None                        ; None                      ; 3.682 ns                ;
+; N/A                                     ; 255.82 MHz ( period = 3.909 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[4]  ; clk        ; clk      ; None                        ; None                      ; 3.669 ns                ;
+; N/A                                     ; 255.89 MHz ( period = 3.908 ns )                    ; frequencyDivider:inst1|counter[0]  ; frequencyDivider:inst1|counter[23] ; clk        ; clk      ; None                        ; None                      ; 3.670 ns                ;
+; N/A                                     ; 255.89 MHz ( period = 3.908 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[3]  ; clk        ; clk      ; None                        ; None                      ; 3.668 ns                ;
+; N/A                                     ; 255.89 MHz ( period = 3.908 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[5]  ; clk        ; clk      ; None                        ; None                      ; 3.668 ns                ;
+; N/A                                     ; 255.89 MHz ( period = 3.908 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[1]  ; clk        ; clk      ; None                        ; None                      ; 3.668 ns                ;
+; N/A                                     ; 255.95 MHz ( period = 3.907 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[8]  ; clk        ; clk      ; None                        ; None                      ; 3.667 ns                ;
+; N/A                                     ; 256.08 MHz ( period = 3.905 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[18] ; clk        ; clk      ; None                        ; None                      ; 3.665 ns                ;
+; N/A                                     ; 256.21 MHz ( period = 3.903 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[9]  ; clk        ; clk      ; None                        ; None                      ; 3.663 ns                ;
+; N/A                                     ; 256.34 MHz ( period = 3.901 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[2]  ; clk        ; clk      ; None                        ; None                      ; 3.661 ns                ;
+; N/A                                     ; 256.41 MHz ( period = 3.900 ns )                    ; frequencyDivider:inst1|counter[12] ; frequencyDivider:inst1|counter[0]  ; clk        ; clk      ; None                        ; None                      ; 3.660 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; VendingMachine:inst|Ret            ; VendingMachine:inst|cr[3]          ; clk        ; clk      ; None                        ; None                      ; 2.366 ns                ;
+; N/A                                     ; 257.53 MHz ( period = 3.883 ns )                    ; frequencyDivider:inst1|counter[19] ; frequencyDivider:inst1|counter[22] ; clk        ; clk      ; None                        ; None                      ; 3.644 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                    ;                                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clk'                                                                                                                                                                                                ;
++------------------------------------------+-----------------------------+----------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack                            ; From                        ; To                         ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++------------------------------------------+-----------------------------+----------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[3]  ; seven_Segment:inst4|out[6] ; clk        ; clk      ; None                       ; None                       ; 1.646 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[2]  ; seven_Segment:inst4|out[4] ; clk        ; clk      ; None                       ; None                       ; 1.666 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[2]  ; seven_Segment:inst4|out[5] ; clk        ; clk      ; None                       ; None                       ; 1.668 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[0]  ; seven_Segment:inst4|out[5] ; clk        ; clk      ; None                       ; None                       ; 1.736 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[0]  ; seven_Segment:inst4|out[4] ; clk        ; clk      ; None                       ; None                       ; 1.738 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[1]  ; seven_Segment:inst4|out[4] ; clk        ; clk      ; None                       ; None                       ; 1.802 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[1]  ; seven_Segment:inst4|out[5] ; clk        ; clk      ; None                       ; None                       ; 1.805 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[2]   ; seven_Segment:inst3|out[1] ; clk        ; clk      ; None                       ; None                       ; 2.195 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[2]   ; seven_Segment:inst3|out[4] ; clk        ; clk      ; None                       ; None                       ; 2.171 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[0]  ; seven_Segment:inst4|out[2] ; clk        ; clk      ; None                       ; None                       ; 1.889 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[2]  ; seven_Segment:inst4|out[2] ; clk        ; clk      ; None                       ; None                       ; 1.890 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[0]   ; seven_Segment:inst3|out[1] ; clk        ; clk      ; None                       ; None                       ; 2.337 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[0]   ; seven_Segment:inst3|out[4] ; clk        ; clk      ; None                       ; None                       ; 2.320 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[2]  ; seven_Segment:inst4|out[1] ; clk        ; clk      ; None                       ; None                       ; 1.968 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[2]  ; seven_Segment:inst4|out[3] ; clk        ; clk      ; None                       ; None                       ; 1.973 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[2]  ; seven_Segment:inst4|out[0] ; clk        ; clk      ; None                       ; None                       ; 1.974 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[1]  ; seven_Segment:inst4|out[2] ; clk        ; clk      ; None                       ; None                       ; 2.021 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[3]  ; seven_Segment:inst4|out[4] ; clk        ; clk      ; None                       ; None                       ; 2.026 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[3]  ; seven_Segment:inst4|out[5] ; clk        ; clk      ; None                       ; None                       ; 2.033 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[0]  ; seven_Segment:inst4|out[1] ; clk        ; clk      ; None                       ; None                       ; 2.035 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[0]  ; seven_Segment:inst4|out[3] ; clk        ; clk      ; None                       ; None                       ; 2.035 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[0]  ; seven_Segment:inst4|out[0] ; clk        ; clk      ; None                       ; None                       ; 2.047 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[1]  ; seven_Segment:inst4|out[1] ; clk        ; clk      ; None                       ; None                       ; 2.092 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[1]  ; seven_Segment:inst4|out[3] ; clk        ; clk      ; None                       ; None                       ; 2.104 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[2]  ; seven_Segment:inst4|out[6] ; clk        ; clk      ; None                       ; None                       ; 2.146 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[1]  ; seven_Segment:inst4|out[0] ; clk        ; clk      ; None                       ; None                       ; 2.111 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[3]  ; seven_Segment:inst4|out[2] ; clk        ; clk      ; None                       ; None                       ; 2.159 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[2]   ; seven_Segment:inst3|out[6] ; clk        ; clk      ; None                       ; None                       ; 2.503 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[2]   ; seven_Segment:inst3|out[5] ; clk        ; clk      ; None                       ; None                       ; 2.504 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[2]   ; seven_Segment:inst3|out[3] ; clk        ; clk      ; None                       ; None                       ; 2.511 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[3]  ; seven_Segment:inst4|out[3] ; clk        ; clk      ; None                       ; None                       ; 2.242 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[1]   ; seven_Segment:inst3|out[1] ; clk        ; clk      ; None                       ; None                       ; 2.645 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[3]   ; seven_Segment:inst3|out[1] ; clk        ; clk      ; None                       ; None                       ; 2.658 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[1]   ; seven_Segment:inst3|out[4] ; clk        ; clk      ; None                       ; None                       ; 2.628 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[3]   ; seven_Segment:inst3|out[4] ; clk        ; clk      ; None                       ; None                       ; 2.640 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[0]   ; seven_Segment:inst3|out[3] ; clk        ; clk      ; None                       ; None                       ; 2.652 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[0]   ; seven_Segment:inst3|out[5] ; clk        ; clk      ; None                       ; None                       ; 2.656 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[0]   ; seven_Segment:inst3|out[6] ; clk        ; clk      ; None                       ; None                       ; 2.659 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[3]  ; seven_Segment:inst4|out[1] ; clk        ; clk      ; None                       ; None                       ; 2.312 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[3]  ; seven_Segment:inst4|out[0] ; clk        ; clk      ; None                       ; None                       ; 2.339 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[1]  ; seven_Segment:inst4|out[6] ; clk        ; clk      ; None                       ; None                       ; 2.468 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[2]   ; seven_Segment:inst3|out[2] ; clk        ; clk      ; None                       ; None                       ; 2.838 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[0]   ; seven_Segment:inst3|out[2] ; clk        ; clk      ; None                       ; None                       ; 2.901 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[1]   ; seven_Segment:inst3|out[5] ; clk        ; clk      ; None                       ; None                       ; 2.964 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[1]   ; seven_Segment:inst3|out[6] ; clk        ; clk      ; None                       ; None                       ; 2.966 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[1]   ; seven_Segment:inst3|out[3] ; clk        ; clk      ; None                       ; None                       ; 2.966 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[3]   ; seven_Segment:inst3|out[3] ; clk        ; clk      ; None                       ; None                       ; 2.971 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[3]   ; seven_Segment:inst3|out[6] ; clk        ; clk      ; None                       ; None                       ; 2.979 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[3]   ; seven_Segment:inst3|out[5] ; clk        ; clk      ; None                       ; None                       ; 2.979 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[2]   ; seven_Segment:inst3|out[0] ; clk        ; clk      ; None                       ; None                       ; 2.983 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[0]   ; seven_Segment:inst3|out[0] ; clk        ; clk      ; None                       ; None                       ; 3.115 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[1]   ; seven_Segment:inst3|out[2] ; clk        ; clk      ; None                       ; None                       ; 3.292 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[3]   ; seven_Segment:inst3|out[2] ; clk        ; clk      ; None                       ; None                       ; 3.310 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|itm[0]  ; seven_Segment:inst4|out[6] ; clk        ; clk      ; None                       ; None                       ; 3.004 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[1]   ; seven_Segment:inst3|out[0] ; clk        ; clk      ; None                       ; None                       ; 3.399 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|cr[3]   ; seven_Segment:inst3|out[0] ; clk        ; clk      ; None                       ; None                       ; 3.435 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[0] ; seven_Segment:inst5|out[2] ; clk        ; clk      ; None                       ; None                       ; 3.900 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[0] ; seven_Segment:inst5|out[6] ; clk        ; clk      ; None                       ; None                       ; 4.066 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[0] ; seven_Segment:inst5|out[1] ; clk        ; clk      ; None                       ; None                       ; 4.088 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[0] ; seven_Segment:inst5|out[3] ; clk        ; clk      ; None                       ; None                       ; 4.095 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[0] ; seven_Segment:inst5|out[5] ; clk        ; clk      ; None                       ; None                       ; 4.101 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[0] ; seven_Segment:inst5|out[4] ; clk        ; clk      ; None                       ; None                       ; 4.099 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[2] ; seven_Segment:inst5|out[2] ; clk        ; clk      ; None                       ; None                       ; 4.097 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[1] ; seven_Segment:inst5|out[2] ; clk        ; clk      ; None                       ; None                       ; 4.101 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[0] ; seven_Segment:inst5|out[0] ; clk        ; clk      ; None                       ; None                       ; 4.135 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[3] ; seven_Segment:inst5|out[2] ; clk        ; clk      ; None                       ; None                       ; 4.140 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[1] ; seven_Segment:inst5|out[6] ; clk        ; clk      ; None                       ; None                       ; 4.266 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[1] ; seven_Segment:inst5|out[3] ; clk        ; clk      ; None                       ; None                       ; 4.299 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[1] ; seven_Segment:inst5|out[5] ; clk        ; clk      ; None                       ; None                       ; 4.301 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[1] ; seven_Segment:inst5|out[1] ; clk        ; clk      ; None                       ; None                       ; 4.303 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[1] ; seven_Segment:inst5|out[4] ; clk        ; clk      ; None                       ; None                       ; 4.309 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[1] ; seven_Segment:inst5|out[0] ; clk        ; clk      ; None                       ; None                       ; 4.337 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[3] ; seven_Segment:inst5|out[3] ; clk        ; clk      ; None                       ; None                       ; 4.344 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[2] ; seven_Segment:inst5|out[6] ; clk        ; clk      ; None                       ; None                       ; 4.347 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[2] ; seven_Segment:inst5|out[5] ; clk        ; clk      ; None                       ; None                       ; 4.350 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[3] ; seven_Segment:inst5|out[6] ; clk        ; clk      ; None                       ; None                       ; 4.374 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[2] ; seven_Segment:inst5|out[3] ; clk        ; clk      ; None                       ; None                       ; 4.383 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[2] ; seven_Segment:inst5|out[1] ; clk        ; clk      ; None                       ; None                       ; 4.386 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[2] ; seven_Segment:inst5|out[4] ; clk        ; clk      ; None                       ; None                       ; 4.389 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[3] ; seven_Segment:inst5|out[5] ; clk        ; clk      ; None                       ; None                       ; 4.403 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[3] ; seven_Segment:inst5|out[1] ; clk        ; clk      ; None                       ; None                       ; 4.409 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[3] ; seven_Segment:inst5|out[4] ; clk        ; clk      ; None                       ; None                       ; 4.414 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[2] ; seven_Segment:inst5|out[0] ; clk        ; clk      ; None                       ; None                       ; 4.420 ns                 ;
+; Not operational: Clock Skew > Data Delay ; VendingMachine:inst|chng[3] ; seven_Segment:inst5|out[0] ; clk        ; clk      ; None                       ; None                       ; 4.441 ns                 ;
++------------------------------------------+-----------------------------+----------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; tsu                                                                                    ;
++-------+--------------+------------+--------+--------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                             ; To Clock ;
++-------+--------------+------------+--------+--------------------------------+----------+
+; N/A   ; None         ; 3.079 ns   ; Jelly  ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A   ; None         ; 3.003 ns   ; Bubbly ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A   ; None         ; 2.831 ns   ; Bubbly ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A   ; None         ; 2.831 ns   ; Bubbly ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A   ; None         ; 2.831 ns   ; Bubbly ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A   ; None         ; 2.782 ns   ; Sour   ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A   ; None         ; 2.686 ns   ; Jelly  ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A   ; None         ; 2.686 ns   ; Jelly  ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A   ; None         ; 2.686 ns   ; Jelly  ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A   ; None         ; 2.686 ns   ; Jelly  ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A   ; None         ; 2.610 ns   ; Sour   ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A   ; None         ; 2.610 ns   ; Sour   ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A   ; None         ; 2.610 ns   ; Sour   ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A   ; None         ; 2.586 ns   ; Jelly  ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A   ; None         ; 2.586 ns   ; Jelly  ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A   ; None         ; 2.586 ns   ; Jelly  ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A   ; None         ; 2.497 ns   ; Bubbly ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A   ; None         ; 2.497 ns   ; Bubbly ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A   ; None         ; 2.497 ns   ; Bubbly ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A   ; None         ; 2.497 ns   ; Bubbly ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A   ; None         ; 2.462 ns   ; Bubbly ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A   ; None         ; 2.283 ns   ; Bubbly ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A   ; None         ; 2.275 ns   ; Sour   ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A   ; None         ; 2.275 ns   ; Sour   ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A   ; None         ; 2.275 ns   ; Sour   ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A   ; None         ; 2.275 ns   ; Sour   ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A   ; None         ; 2.241 ns   ; Sour   ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A   ; None         ; 2.121 ns   ; Bubbly ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A   ; None         ; 2.105 ns   ; Jelly  ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A   ; None         ; 2.062 ns   ; Sour   ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A   ; None         ; 1.983 ns   ; Jelly  ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A   ; None         ; 1.982 ns   ; Bubbly ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A   ; None         ; 1.943 ns   ; Jelly  ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A   ; None         ; 1.943 ns   ; Jelly  ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A   ; None         ; 1.900 ns   ; Sour   ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A   ; None         ; 1.761 ns   ; Sour   ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A   ; None         ; 1.203 ns   ; 1s     ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A   ; None         ; 1.111 ns   ; Jelly  ; VendingMachine:inst|Ret        ; clk      ;
+; N/A   ; None         ; 1.031 ns   ; 1s     ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A   ; None         ; 1.031 ns   ; 1s     ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A   ; None         ; 1.031 ns   ; 1s     ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A   ; None         ; 0.934 ns   ; ret    ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A   ; None         ; 0.934 ns   ; ret    ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A   ; None         ; 0.934 ns   ; ret    ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A   ; None         ; 0.922 ns   ; Bubbly ; VendingMachine:inst|Ret        ; clk      ;
+; N/A   ; None         ; 0.711 ns   ; 1s     ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A   ; None         ; 0.700 ns   ; Sour   ; VendingMachine:inst|Ret        ; clk      ;
+; N/A   ; None         ; 0.662 ns   ; 1s     ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A   ; None         ; 0.584 ns   ; 1s     ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A   ; None         ; 0.483 ns   ; Bubbly ; VendingMachine:inst|flag       ; clk      ;
+; N/A   ; None         ; 0.413 ns   ; 1s     ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A   ; None         ; 0.413 ns   ; 1s     ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A   ; None         ; 0.413 ns   ; 1s     ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A   ; None         ; 0.413 ns   ; 1s     ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A   ; None         ; 0.375 ns   ; ret    ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A   ; None         ; 0.375 ns   ; ret    ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A   ; None         ; 0.375 ns   ; ret    ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A   ; None         ; 0.375 ns   ; ret    ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A   ; None         ; 0.262 ns   ; Sour   ; VendingMachine:inst|flag       ; clk      ;
+; N/A   ; None         ; 0.182 ns   ; 1s     ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A   ; None         ; 0.111 ns   ; ret    ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A   ; None         ; -0.154 ns  ; ret    ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A   ; None         ; -0.154 ns  ; ret    ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A   ; None         ; -0.301 ns  ; ret    ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A   ; None         ; -0.848 ns  ; ret    ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A   ; None         ; -1.162 ns  ; 1s     ; VendingMachine:inst|Ret        ; clk      ;
+; N/A   ; None         ; -1.317 ns  ; 1s     ; VendingMachine:inst|flag       ; clk      ;
+; N/A   ; None         ; -1.421 ns  ; Jelly  ; VendingMachine:inst|flag       ; clk      ;
+; N/A   ; None         ; -2.542 ns  ; ret    ; VendingMachine:inst|flag       ; clk      ;
+; N/A   ; None         ; -2.624 ns  ; ret    ; VendingMachine:inst|Ret        ; clk      ;
+; N/A   ; None         ; -3.554 ns  ; ret    ; VendingMachine:inst|counter[2] ; clk      ;
+; N/A   ; None         ; -3.593 ns  ; ret    ; VendingMachine:inst|counter[1] ; clk      ;
+; N/A   ; None         ; -3.942 ns  ; ret    ; VendingMachine:inst|counter[0] ; clk      ;
+; N/A   ; None         ; -3.950 ns  ; ret    ; VendingMachine:inst|counter[3] ; clk      ;
++-------+--------------+------------+--------+--------------------------------+----------+
+
+
++---------------------------------------------------------------------------------------------+
+; tco                                                                                         ;
++-------+--------------+------------+----------------------------+---------------+------------+
+; Slack ; Required tco ; Actual tco ; From                       ; To            ; From Clock ;
++-------+--------------+------------+----------------------------+---------------+------------+
+; N/A   ; None         ; 16.294 ns  ; seven_Segment:inst3|out[1] ; pin_name11[1] ; clk        ;
+; N/A   ; None         ; 16.121 ns  ; seven_Segment:inst3|out[4] ; pin_name11[4] ; clk        ;
+; N/A   ; None         ; 16.083 ns  ; seven_Segment:inst4|out[5] ; pin_ame12[5]  ; clk        ;
+; N/A   ; None         ; 16.049 ns  ; seven_Segment:inst4|out[2] ; pin_ame12[2]  ; clk        ;
+; N/A   ; None         ; 15.936 ns  ; seven_Segment:inst3|out[5] ; pin_name11[5] ; clk        ;
+; N/A   ; None         ; 15.867 ns  ; seven_Segment:inst3|out[6] ; pin_name11[6] ; clk        ;
+; N/A   ; None         ; 15.852 ns  ; seven_Segment:inst4|out[0] ; pin_ame12[0]  ; clk        ;
+; N/A   ; None         ; 15.814 ns  ; seven_Segment:inst3|out[3] ; pin_name11[3] ; clk        ;
+; N/A   ; None         ; 15.768 ns  ; seven_Segment:inst4|out[3] ; pin_ame12[3]  ; clk        ;
+; N/A   ; None         ; 15.752 ns  ; seven_Segment:inst4|out[1] ; pin_ame12[1]  ; clk        ;
+; N/A   ; None         ; 15.436 ns  ; seven_Segment:inst3|out[2] ; pin_name11[2] ; clk        ;
+; N/A   ; None         ; 15.237 ns  ; seven_Segment:inst4|out[4] ; pin_ame12[4]  ; clk        ;
+; N/A   ; None         ; 15.149 ns  ; seven_Segment:inst3|out[0] ; pin_name11[0] ; clk        ;
+; N/A   ; None         ; 15.005 ns  ; seven_Segment:inst4|out[6] ; pin_ame12[6]  ; clk        ;
+; N/A   ; None         ; 13.673 ns  ; seven_Segment:inst5|out[6] ; pin_name13[6] ; clk        ;
+; N/A   ; None         ; 13.663 ns  ; seven_Segment:inst5|out[4] ; pin_name13[4] ; clk        ;
+; N/A   ; None         ; 13.652 ns  ; seven_Segment:inst5|out[5] ; pin_name13[5] ; clk        ;
+; N/A   ; None         ; 13.647 ns  ; seven_Segment:inst5|out[0] ; pin_name13[0] ; clk        ;
+; N/A   ; None         ; 13.350 ns  ; seven_Segment:inst5|out[2] ; pin_name13[2] ; clk        ;
+; N/A   ; None         ; 13.344 ns  ; seven_Segment:inst5|out[3] ; pin_name13[3] ; clk        ;
+; N/A   ; None         ; 13.306 ns  ; seven_Segment:inst5|out[1] ; pin_name13[1] ; clk        ;
++-------+--------------+------------+----------------------------+---------------+------------+
+
+
++----------------------------------------------------------------------------------------------+
+; th                                                                                           ;
++---------------+-------------+-----------+--------+--------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                             ; To Clock ;
++---------------+-------------+-----------+--------+--------------------------------+----------+
+; N/A           ; None        ; 4.198 ns  ; ret    ; VendingMachine:inst|counter[3] ; clk      ;
+; N/A           ; None        ; 4.190 ns  ; ret    ; VendingMachine:inst|counter[0] ; clk      ;
+; N/A           ; None        ; 3.841 ns  ; ret    ; VendingMachine:inst|counter[1] ; clk      ;
+; N/A           ; None        ; 3.802 ns  ; ret    ; VendingMachine:inst|counter[2] ; clk      ;
+; N/A           ; None        ; 3.556 ns  ; 1s     ; VendingMachine:inst|flag       ; clk      ;
+; N/A           ; None        ; 2.872 ns  ; ret    ; VendingMachine:inst|Ret        ; clk      ;
+; N/A           ; None        ; 2.872 ns  ; ret    ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A           ; None        ; 2.872 ns  ; ret    ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A           ; None        ; 2.790 ns  ; ret    ; VendingMachine:inst|flag       ; clk      ;
+; N/A           ; None        ; 2.693 ns  ; ret    ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A           ; None        ; 2.255 ns  ; Jelly  ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A           ; None        ; 2.190 ns  ; Jelly  ; VendingMachine:inst|Ret        ; clk      ;
+; N/A           ; None        ; 2.086 ns  ; 1s     ; VendingMachine:inst|Ret        ; clk      ;
+; N/A           ; None        ; 2.001 ns  ; Sour   ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A           ; None        ; 1.837 ns  ; Bubbly ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A           ; None        ; 1.685 ns  ; ret    ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A           ; None        ; 1.674 ns  ; ret    ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A           ; None        ; 1.669 ns  ; Jelly  ; VendingMachine:inst|flag       ; clk      ;
+; N/A           ; None        ; 1.219 ns  ; Sour   ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A           ; None        ; 1.192 ns  ; ret    ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A           ; None        ; 1.132 ns  ; Sour   ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A           ; None        ; 1.096 ns  ; ret    ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A           ; None        ; 1.092 ns  ; ret    ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A           ; None        ; 1.032 ns  ; Sour   ; VendingMachine:inst|Ret        ; clk      ;
+; N/A           ; None        ; 1.009 ns  ; Sour   ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A           ; None        ; 1.003 ns  ; Bubbly ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A           ; None        ; 0.916 ns  ; Bubbly ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A           ; None        ; 0.893 ns  ; Jelly  ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A           ; None        ; 0.816 ns  ; Bubbly ; VendingMachine:inst|Ret        ; clk      ;
+; N/A           ; None        ; 0.806 ns  ; Jelly  ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A           ; None        ; 0.793 ns  ; Bubbly ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A           ; None        ; 0.779 ns  ; Jelly  ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A           ; None        ; 0.700 ns  ; Sour   ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A           ; None        ; 0.675 ns  ; 1s     ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A           ; None        ; 0.549 ns  ; ret    ; VendingMachine:inst|cr[0]      ; clk      ;
+; N/A           ; None        ; 0.440 ns  ; 1s     ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A           ; None        ; 0.328 ns  ; 1s     ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A           ; None        ; 0.327 ns  ; Jelly  ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A           ; None        ; 0.324 ns  ; 1s     ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A           ; None        ; 0.323 ns  ; 1s     ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A           ; None        ; 0.315 ns  ; Sour   ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A           ; None        ; 0.288 ns  ; Jelly  ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A           ; None        ; 0.284 ns  ; Bubbly ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A           ; None        ; 0.264 ns  ; Sour   ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A           ; None        ; 0.256 ns  ; 1s     ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A           ; None        ; 0.215 ns  ; Jelly  ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A           ; None        ; 0.211 ns  ; Jelly  ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A           ; None        ; 0.210 ns  ; Jelly  ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A           ; None        ; 0.158 ns  ; Jelly  ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A           ; None        ; 0.143 ns  ; Jelly  ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A           ; None        ; 0.129 ns  ; 1s     ; VendingMachine:inst|cr[3]      ; clk      ;
+; N/A           ; None        ; 0.099 ns  ; Bubbly ; VendingMachine:inst|cr[1]      ; clk      ;
+; N/A           ; None        ; 0.054 ns  ; 1s     ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A           ; None        ; 0.048 ns  ; Bubbly ; VendingMachine:inst|cr[2]      ; clk      ;
+; N/A           ; None        ; -0.014 ns ; Sour   ; VendingMachine:inst|flag       ; clk      ;
+; N/A           ; None        ; -0.061 ns ; Jelly  ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A           ; None        ; -0.120 ns ; Sour   ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A           ; None        ; -0.165 ns ; 1s     ; VendingMachine:inst|itm[0]     ; clk      ;
+; N/A           ; None        ; -0.165 ns ; 1s     ; VendingMachine:inst|itm[1]     ; clk      ;
+; N/A           ; None        ; -0.165 ns ; 1s     ; VendingMachine:inst|itm[2]     ; clk      ;
+; N/A           ; None        ; -0.165 ns ; 1s     ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A           ; None        ; -0.235 ns ; Bubbly ; VendingMachine:inst|flag       ; clk      ;
+; N/A           ; None        ; -0.336 ns ; Bubbly ; VendingMachine:inst|chng[0]    ; clk      ;
+; N/A           ; None        ; -0.455 ns ; Sour   ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A           ; None        ; -0.543 ns ; Sour   ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A           ; None        ; -0.591 ns ; Sour   ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A           ; None        ; -0.629 ns ; Sour   ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A           ; None        ; -0.671 ns ; Bubbly ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A           ; None        ; -0.686 ns ; ret    ; VendingMachine:inst|chng[1]    ; clk      ;
+; N/A           ; None        ; -0.686 ns ; ret    ; VendingMachine:inst|chng[2]    ; clk      ;
+; N/A           ; None        ; -0.686 ns ; ret    ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A           ; None        ; -0.759 ns ; Bubbly ; VendingMachine:inst|itm[3]     ; clk      ;
+; N/A           ; None        ; -0.807 ns ; Bubbly ; VendingMachine:inst|chng[3]    ; clk      ;
+; N/A           ; None        ; -0.845 ns ; Bubbly ; VendingMachine:inst|chng[1]    ; clk      ;
++---------------+-------------+-----------+--------+--------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Wed May 18 14:18:57 2016
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off LabDigitalProject -c LabDigitalProject --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "seven_Segment:inst4|out[6]" is a latch
+    Warning: Node "seven_Segment:inst4|out[5]" is a latch
+    Warning: Node "seven_Segment:inst4|out[4]" is a latch
+    Warning: Node "seven_Segment:inst4|out[3]" is a latch
+    Warning: Node "seven_Segment:inst4|out[2]" is a latch
+    Warning: Node "seven_Segment:inst4|out[1]" is a latch
+    Warning: Node "seven_Segment:inst4|out[0]" is a latch
+    Warning: Node "seven_Segment:inst3|out[6]" is a latch
+    Warning: Node "seven_Segment:inst3|out[5]" is a latch
+    Warning: Node "seven_Segment:inst3|out[4]" is a latch
+    Warning: Node "seven_Segment:inst3|out[3]" is a latch
+    Warning: Node "seven_Segment:inst3|out[2]" is a latch
+    Warning: Node "seven_Segment:inst3|out[1]" is a latch
+    Warning: Node "seven_Segment:inst3|out[0]" is a latch
+    Warning: Node "seven_Segment:inst5|out[6]" is a latch
+    Warning: Node "seven_Segment:inst5|out[5]" is a latch
+    Warning: Node "seven_Segment:inst5|out[4]" is a latch
+    Warning: Node "seven_Segment:inst5|out[3]" is a latch
+    Warning: Node "seven_Segment:inst5|out[2]" is a latch
+    Warning: Node "seven_Segment:inst5|out[1]" is a latch
+    Warning: Node "seven_Segment:inst5|out[0]" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 16 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected gated clock "seven_Segment:inst5|Mux7~0" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|chng[3]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|chng[2]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|chng[1]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|chng[0]" as buffer
+    Info: Detected gated clock "seven_Segment:inst3|Mux7~0" as buffer
+    Info: Detected gated clock "seven_Segment:inst4|Mux7~0" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|itm[3]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|itm[2]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|itm[1]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|cr[0]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|cr[3]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|cr[2]" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|cr[1]" as buffer
+    Info: Detected ripple clock "frequencyDivider:inst1|freq_out" as buffer
+    Info: Detected ripple clock "VendingMachine:inst|itm[0]" as buffer
+Info: Clock "clk" has Internal fmax of 154.11 MHz between source register "VendingMachine:inst|cr[2]" and destination register "VendingMachine:inst|chng[0]" (period= 6.489 ns)
+    Info: + Longest register to register delay is 5.959 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X31_Y17_N31; Fanout = 20; REG Node = 'VendingMachine:inst|cr[2]'
+        Info: 2: + IC(1.586 ns) + CELL(0.521 ns) = 2.107 ns; Loc. = LCCOMB_X31_Y17_N26; Fanout = 1; COMB Node = 'VendingMachine:inst|LessThan3~0'
+        Info: 3: + IC(0.291 ns) + CELL(0.178 ns) = 2.576 ns; Loc. = LCCOMB_X31_Y17_N2; Fanout = 3; COMB Node = 'VendingMachine:inst|cr[1]~39'
+        Info: 4: + IC(0.552 ns) + CELL(0.322 ns) = 3.450 ns; Loc. = LCCOMB_X31_Y17_N22; Fanout = 5; COMB Node = 'VendingMachine:inst|cr[1]~42'
+        Info: 5: + IC(1.376 ns) + CELL(0.178 ns) = 5.004 ns; Loc. = LCCOMB_X32_Y17_N20; Fanout = 1; COMB Node = 'VendingMachine:inst|chng[0]~41'
+        Info: 6: + IC(0.314 ns) + CELL(0.545 ns) = 5.863 ns; Loc. = LCCOMB_X32_Y17_N12; Fanout = 1; COMB Node = 'VendingMachine:inst|chng[0]~45'
+        Info: 7: + IC(0.000 ns) + CELL(0.096 ns) = 5.959 ns; Loc. = LCFF_X32_Y17_N13; Fanout = 10; REG Node = 'VendingMachine:inst|chng[0]'
+        Info: Total cell delay = 1.840 ns ( 30.88 % )
+        Info: Total interconnect delay = 4.119 ns ( 69.12 % )
+    Info: - Smallest clock skew is -0.291 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 4.951 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(1.514 ns) + CELL(0.879 ns) = 3.399 ns; Loc. = LCFF_X31_Y14_N7; Fanout = 13; REG Node = 'frequencyDivider:inst1|freq_out'
+            Info: 3: + IC(0.950 ns) + CELL(0.602 ns) = 4.951 ns; Loc. = LCFF_X32_Y17_N13; Fanout = 10; REG Node = 'VendingMachine:inst|chng[0]'
+            Info: Total cell delay = 2.487 ns ( 50.23 % )
+            Info: Total interconnect delay = 2.464 ns ( 49.77 % )
+        Info: - Longest clock path from clock "clk" to source register is 5.242 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(1.514 ns) + CELL(0.879 ns) = 3.399 ns; Loc. = LCFF_X31_Y14_N7; Fanout = 13; REG Node = 'frequencyDivider:inst1|freq_out'
+            Info: 3: + IC(1.241 ns) + CELL(0.602 ns) = 5.242 ns; Loc. = LCFF_X31_Y17_N31; Fanout = 20; REG Node = 'VendingMachine:inst|cr[2]'
+            Info: Total cell delay = 2.487 ns ( 47.44 % )
+            Info: Total interconnect delay = 2.755 ns ( 52.56 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Warning: Circuit may not operate. Detected 84 non-operational path(s) clocked by clock "clk" with clock skew larger than data delay. See Compilation Report for details.
+Info: Found hold time violation between source  pin or register "VendingMachine:inst|itm[3]" and destination pin or register "seven_Segment:inst4|out[6]" for clock "clk" (Hold time is 2.95 ns)
+    Info: + Largest clock skew is 4.873 ns
+        Info: + Longest clock path from clock "clk" to destination register is 10.127 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(1.514 ns) + CELL(0.879 ns) = 3.399 ns; Loc. = LCFF_X31_Y14_N7; Fanout = 13; REG Node = 'frequencyDivider:inst1|freq_out'
+            Info: 3: + IC(1.253 ns) + CELL(0.879 ns) = 5.531 ns; Loc. = LCFF_X30_Y18_N27; Fanout = 8; REG Node = 'VendingMachine:inst|itm[0]'
+            Info: 4: + IC(0.603 ns) + CELL(0.322 ns) = 6.456 ns; Loc. = LCCOMB_X30_Y18_N14; Fanout = 1; COMB Node = 'seven_Segment:inst4|Mux7~0'
+            Info: 5: + IC(2.102 ns) + CELL(0.000 ns) = 8.558 ns; Loc. = CLKCTRL_G7; Fanout = 7; COMB Node = 'seven_Segment:inst4|Mux7~0clkctrl'
+            Info: 6: + IC(1.391 ns) + CELL(0.178 ns) = 10.127 ns; Loc. = LCCOMB_X30_Y18_N8; Fanout = 1; REG Node = 'seven_Segment:inst4|out[6]'
+            Info: Total cell delay = 3.264 ns ( 32.23 % )
+            Info: Total interconnect delay = 6.863 ns ( 67.77 % )
+        Info: - Shortest clock path from clock "clk" to source register is 5.254 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+            Info: 2: + IC(1.514 ns) + CELL(0.879 ns) = 3.399 ns; Loc. = LCFF_X31_Y14_N7; Fanout = 13; REG Node = 'frequencyDivider:inst1|freq_out'
+            Info: 3: + IC(1.253 ns) + CELL(0.602 ns) = 5.254 ns; Loc. = LCFF_X30_Y18_N1; Fanout = 8; REG Node = 'VendingMachine:inst|itm[3]'
+            Info: Total cell delay = 2.487 ns ( 47.34 % )
+            Info: Total interconnect delay = 2.767 ns ( 52.66 % )
+    Info: - Micro clock to output delay of source is 0.277 ns
+    Info: - Shortest register to register delay is 1.646 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X30_Y18_N1; Fanout = 8; REG Node = 'VendingMachine:inst|itm[3]'
+        Info: 2: + IC(0.000 ns) + CELL(0.358 ns) = 0.358 ns; Loc. = LCCOMB_X30_Y18_N0; Fanout = 1; COMB Node = 'seven_Segment:inst4|Mux6~2'
+        Info: 3: + IC(0.797 ns) + CELL(0.491 ns) = 1.646 ns; Loc. = LCCOMB_X30_Y18_N8; Fanout = 1; REG Node = 'seven_Segment:inst4|out[6]'
+        Info: Total cell delay = 0.849 ns ( 51.58 % )
+        Info: Total interconnect delay = 0.797 ns ( 48.42 % )
+    Info: + Micro hold delay of destination is 0.000 ns
+Info: tsu for register "VendingMachine:inst|chng[0]" (data pin = "Jelly", clock pin = "clk") is 3.079 ns
+    Info: + Longest pin to register delay is 8.068 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_V12; Fanout = 8; PIN Node = 'Jelly'
+        Info: 2: + IC(1.713 ns) + CELL(0.542 ns) = 3.261 ns; Loc. = LCCOMB_X30_Y17_N24; Fanout = 10; COMB Node = 'VendingMachine:inst|always0~6'
+        Info: 3: + IC(0.831 ns) + CELL(0.521 ns) = 4.613 ns; Loc. = LCCOMB_X27_Y17_N10; Fanout = 3; COMB Node = 'VendingMachine:inst|Ret~10'
+        Info: 4: + IC(1.715 ns) + CELL(0.319 ns) = 6.647 ns; Loc. = LCCOMB_X32_Y17_N6; Fanout = 1; COMB Node = 'VendingMachine:inst|chng[0]~42'
+        Info: 5: + IC(0.312 ns) + CELL(0.545 ns) = 7.504 ns; Loc. = LCCOMB_X32_Y17_N0; Fanout = 1; COMB Node = 'VendingMachine:inst|chng[0]~44'
+        Info: 6: + IC(0.290 ns) + CELL(0.178 ns) = 7.972 ns; Loc. = LCCOMB_X32_Y17_N12; Fanout = 1; COMB Node = 'VendingMachine:inst|chng[0]~45'
+        Info: 7: + IC(0.000 ns) + CELL(0.096 ns) = 8.068 ns; Loc. = LCFF_X32_Y17_N13; Fanout = 10; REG Node = 'VendingMachine:inst|chng[0]'
+        Info: Total cell delay = 3.207 ns ( 39.75 % )
+        Info: Total interconnect delay = 4.861 ns ( 60.25 % )
+    Info: + Micro setup delay of destination is -0.038 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 4.951 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(1.514 ns) + CELL(0.879 ns) = 3.399 ns; Loc. = LCFF_X31_Y14_N7; Fanout = 13; REG Node = 'frequencyDivider:inst1|freq_out'
+        Info: 3: + IC(0.950 ns) + CELL(0.602 ns) = 4.951 ns; Loc. = LCFF_X32_Y17_N13; Fanout = 10; REG Node = 'VendingMachine:inst|chng[0]'
+        Info: Total cell delay = 2.487 ns ( 50.23 % )
+        Info: Total interconnect delay = 2.464 ns ( 49.77 % )
+Info: tco from clock "clk" to destination pin "pin_name11[1]" through register "seven_Segment:inst3|out[1]" is 16.294 ns
+    Info: + Longest clock path from clock "clk" to source register is 10.479 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(1.514 ns) + CELL(0.879 ns) = 3.399 ns; Loc. = LCFF_X31_Y14_N7; Fanout = 13; REG Node = 'frequencyDivider:inst1|freq_out'
+        Info: 3: + IC(1.241 ns) + CELL(0.879 ns) = 5.519 ns; Loc. = LCFF_X31_Y17_N31; Fanout = 20; REG Node = 'VendingMachine:inst|cr[2]'
+        Info: 4: + IC(1.052 ns) + CELL(0.521 ns) = 7.092 ns; Loc. = LCCOMB_X27_Y17_N4; Fanout = 1; COMB Node = 'seven_Segment:inst3|Mux7~0'
+        Info: 5: + IC(1.808 ns) + CELL(0.000 ns) = 8.900 ns; Loc. = CLKCTRL_G8; Fanout = 7; COMB Node = 'seven_Segment:inst3|Mux7~0clkctrl'
+        Info: 6: + IC(1.401 ns) + CELL(0.178 ns) = 10.479 ns; Loc. = LCCOMB_X27_Y17_N12; Fanout = 1; REG Node = 'seven_Segment:inst3|out[1]'
+        Info: Total cell delay = 3.463 ns ( 33.05 % )
+        Info: Total interconnect delay = 7.016 ns ( 66.95 % )
+    Info: + Micro clock to output delay of source is 0.000 ns
+    Info: + Longest register to pin delay is 5.815 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCCOMB_X27_Y17_N12; Fanout = 1; REG Node = 'seven_Segment:inst3|out[1]'
+        Info: 2: + IC(2.975 ns) + CELL(2.840 ns) = 5.815 ns; Loc. = PIN_J1; Fanout = 0; PIN Node = 'pin_name11[1]'
+        Info: Total cell delay = 2.840 ns ( 48.84 % )
+        Info: Total interconnect delay = 2.975 ns ( 51.16 % )
+Info: th for register "VendingMachine:inst|counter[3]" (data pin = "ret", clock pin = "clk") is 4.198 ns
+    Info: + Longest clock path from clock "clk" to destination register is 6.523 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.006 ns) = 1.006 ns; Loc. = PIN_D12; Fanout = 2; CLK Node = 'clk'
+        Info: 2: + IC(1.514 ns) + CELL(0.879 ns) = 3.399 ns; Loc. = LCFF_X31_Y14_N7; Fanout = 13; REG Node = 'frequencyDivider:inst1|freq_out'
+        Info: 3: + IC(1.542 ns) + CELL(0.000 ns) = 4.941 ns; Loc. = CLKCTRL_G5; Fanout = 6; COMB Node = 'frequencyDivider:inst1|freq_out~clkctrl'
+        Info: 4: + IC(0.980 ns) + CELL(0.602 ns) = 6.523 ns; Loc. = LCFF_X29_Y17_N25; Fanout = 2; REG Node = 'VendingMachine:inst|counter[3]'
+        Info: Total cell delay = 2.487 ns ( 38.13 % )
+        Info: Total interconnect delay = 4.036 ns ( 61.87 % )
+    Info: + Micro hold delay of destination is 0.286 ns
+    Info: - Shortest pin to register delay is 2.611 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.036 ns) = 1.036 ns; Loc. = PIN_M22; Fanout = 9; PIN Node = 'ret'
+        Info: 2: + IC(1.301 ns) + CELL(0.178 ns) = 2.515 ns; Loc. = LCCOMB_X29_Y17_N24; Fanout = 1; COMB Node = 'VendingMachine:inst|counter[3]~18'
+        Info: 3: + IC(0.000 ns) + CELL(0.096 ns) = 2.611 ns; Loc. = LCFF_X29_Y17_N25; Fanout = 2; REG Node = 'VendingMachine:inst|counter[3]'
+        Info: Total cell delay = 1.310 ns ( 50.17 % )
+        Info: Total interconnect delay = 1.301 ns ( 49.83 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 134 megabytes
+    Info: Processing ended: Wed May 18 14:18:58 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

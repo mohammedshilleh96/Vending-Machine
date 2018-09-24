@@ -1,0 +1,152 @@
+Version 9.0 Build 132 02/25/2009 SJ Web Edition
+11
+980
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+frequencyDivider
+# storage
+db|LabDigitalProject.(2).cnf
+db|LabDigitalProject.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|frequencyDivider|frequencyDivider.v
+59ef3d3e2734b2add28f9b9c6553a4d5
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+frequencyDivider:inst1
+}
+# macro_sequence
+
+# end
+# entity
+VendingMachine
+# storage
+db|LabDigitalProject.(1).cnf
+db|LabDigitalProject.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|VendingMachine|VendingMachine.v
+24ffcd4aec3b78665ba3d44144fa2f7d
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+VendingMachine:inst
+}
+# macro_sequence
+
+# end
+# entity
+seven_Segment
+# storage
+db|LabDigitalProject.(0).cnf
+db|LabDigitalProject.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+..|seven_Segment|seven_Segment.v
+f38f18ca82b07942dd2de4ede92ca3c9
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+seven_Segment:inst4
+seven_Segment:inst3
+seven_Segment:inst5
+}
+# macro_sequence
+
+# end
+# entity
+LabDigitalProject
+# storage
+db|LabDigitalProject.(3).cnf
+db|LabDigitalProject.(3).cnf
+# case_insensitive
+# source_file
+LabDigitalProject.bdf
+f05f8a3ae99ab21737575519d670a775
+26
+# internal_option {
+BLOCK_DESIGN_NAMING
+AUTO
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# complete
+

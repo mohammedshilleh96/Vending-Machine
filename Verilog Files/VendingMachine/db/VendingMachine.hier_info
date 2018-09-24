@@ -1,0 +1,42 @@
+|VendingMachine
+clk => chng[3]~reg0.CLK
+clk => chng[2]~reg0.CLK
+clk => chng[1]~reg0.CLK
+clk => chng[0]~reg0.CLK
+clk => cr[3]~reg0.CLK
+clk => cr[2]~reg0.CLK
+clk => cr[1]~reg0.CLK
+clk => cr[0]~reg0.CLK
+clk => itm[3]~reg0.CLK
+clk => itm[2]~reg0.CLK
+clk => itm[1]~reg0.CLK
+clk => itm[0]~reg0.CLK
+clk => Ret.CLK
+shekel => always0~3.IN1
+ret => always0~0.IN1
+jelly => always0~5.IN0
+jelly => always0~1.IN1
+jelly => always0~6.IN1
+jelly => always0~9.IN1
+bubbly => always0~6.IN0
+bubbly => always0~1.IN0
+bubbly => always0~4.IN0
+bubbly => always0~8.IN0
+sour => always0~8.IN1
+sour => always0~2.IN0
+sour => always0~4.IN1
+sour => always0~7.IN0
+cr[0] <= cr[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cr[1] <= cr[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cr[2] <= cr[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cr[3] <= cr[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+itm[0] <= itm[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+itm[1] <= itm[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+itm[2] <= itm[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+itm[3] <= itm[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+chng[0] <= chng[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+chng[1] <= chng[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+chng[2] <= chng[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+chng[3] <= chng[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

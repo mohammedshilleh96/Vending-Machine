@@ -1,0 +1,32 @@
+module frequencyDivider(freq_in , freq_out);
+input freq_in; //This is the frequency from the FPGA freq_in = 27 MHz
+output freq_out; // freq_out = 1 Hz
+
+//By Rule that all the input ports should be wires
+wire freq_in;
+
+//output port can be a storage elemnt (reg)
+reg freq_out;
+reg [24:0] counter;
+
+always @(posedge freq_in)
+begin
+	if(reset == 0)
+		begin
+			counter = 0;
+			freq_out = 0;
+		end
+	
+	else if (counter == 0)
+		begin
+			counter = 27000000;
+			freq_out = 0;
+		end
+		
+	else
+		begin
+			counter = counter - 1;
+			freq_out = 1;
+		end
+end
+endmodule

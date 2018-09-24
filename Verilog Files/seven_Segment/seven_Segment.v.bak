@@ -1,0 +1,29 @@
+module seven_Segment(inputs , outputs);
+input inputs;
+output outputs;
+
+wire [3:0] inputs;
+reg  [6:0] outputs;
+
+always@(inputs)
+begin
+	case (inputs)
+		0 : outputs = 7'b1000000;
+		1 : outputs = 7'b1001111;
+		2 : outputs = 7'b0010010;
+		3 : outputs = 7'b0000110;
+		4 : outputs = 7'b1001100;
+		5 : outputs = 7'b0100100;
+		6 : outputs = 7'b0100000;
+		7 : outputs = 7'b0001111;
+		8 : outputs = 7'b0000000;
+		9 : outputs = 7'b0000100;
+
+
+		10: outputs = 7'b1100001;
+		11: outputs = 7'b0000011;
+		12: outputs = 7'b0100100;
+
+	endcase
+end
+endmodule
